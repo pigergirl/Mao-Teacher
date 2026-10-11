@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#08090c">
+    <title>MAO Teacher — User Manual</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #08090c;
+            --fg: #f5f5f7;
+            --muted: #a1a1aa;
+            --line: #292932;
+            --blue: #8db8ff
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.7
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #090a0cde;
+            backdrop-filter: blur(22px);
+            border-bottom: 1px solid #ffffff16;
+            padding: 11px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px
+        }
+
+        nav strong {
+            font-size: 14px
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none
+        }
+
+        .hero {
+            min-height: 94svh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 65px 20px;
+            background: radial-gradient(ellipse at 50% 55%, #28354c 0%, #10151f 30%, #08090c 70%)
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .22em
+        }
+
+        .hero h1 {
+            font-size: clamp(58px, 15vw, 112px);
+            line-height: 1.02;
+            letter-spacing: -.075em;
+            margin: 18px 0
+        }
+
+        .gradient {
+            background: linear-gradient(120deg, #fff 15%, #b8c8e5 55%, #768aa7);
+            color: transparent;
+            background-clip: text
+        }
+
+        .hero .sub {
+            font-size: clamp(19px, 4vw, 27px);
+            color: #c3c6d0;
+            margin: 0
+        }
+
+        .pill {
+            display: inline-block;
+            border: 1px solid #5b6575;
+            border-radius: 100px;
+            padding: 7px 16px;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #d9e3f2
+        }
+
+        .scroll {
+            margin-top: 55px;
+            font-size: 12px;
+            color: #8a93a2
+        }
+
+        .wrap {
+            max-width: 850px;
+            margin: auto;
+            padding: 0 22px
+        }
+
+        section {
+            padding: 95px 0;
+            border-bottom: 1px solid #ffffff13
+        }
+
+        .section-num {
+            color: var(--blue);
+            font-size: 12px;
+            letter-spacing: .16em;
+            font-weight: 700
+        }
+
+        .heading {
+            font-size: clamp(35px, 8vw, 64px);
+            letter-spacing: -.055em;
+            line-height: 1.16;
+            margin: 14px 0 22px
+        }
+
+        .lead {
+            font-size: 20px;
+            color: #c5c6ce;
+            max-width: 720px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .spec {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 32px
+        }
+
+        .tile {
+            background: #16171d;
+            border: 1px solid #ffffff0e;
+            border-radius: 22px;
+            padding: 22px
+        }
+
+        .tile small {
+            display: block;
+            color: #999ba8;
+            font-size: 12px
+        }
+
+        .tile b {
+            display: block;
+            font-size: 17px;
+            margin-top: 6px
+        }
+
+        .feature {
+            padding: 32px 0;
+            border-bottom: 1px solid #ffffff18
+        }
+
+        .feature .n {
+            font-size: 13px;
+            color: var(--blue)
+        }
+
+        .feature h3 {
+            font-size: 27px;
+            margin: 7px 0
+        }
+
+        .feature p {
+            color: #c1c2ca
+        }
+
+        .feature .quote {
+            font-size: 21px;
+            color: #fff;
+            font-weight: 650
+        }
+
+        .traits {
+            display: grid;
+            gap: 10px;
+            margin-top: 25px
+        }
+
+        .trait {
+            background: #15161b;
+            border-radius: 17px;
+            padding: 18px 20px;
+            display: flex;
+            gap: 18px;
+            justify-content: space-between
+        }
+
+        .trait strong {
+            min-width: 112px
+        }
+
+        .trait span {
+            color: #b5b6c0;
+            text-align: right
+        }
+
+        .faq {
+            margin-top: 26px
+        }
+
+        .faq details {
+            border-bottom: 1px solid #ffffff26;
+            padding: 19px 0
+        }
+
+        .faq summary {
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px
+        }
+
+        .faq summary:after {
+            content: '+';
+            color: var(--blue);
+            font-size: 24px;
+            line-height: 1
+        }
+
+        .faq details[open] summary:after {
+            content: '−'
+        }
+
+        .faq p {
+            color: #bdbec9;
+            margin-bottom: 4px
+        }
+
+        .statement {
+            text-align: center;
+            padding: 105px 0
+        }
+
+        .statement .big {
+            font-size: clamp(27px, 6vw, 46px);
+            line-height: 1.35;
+            font-weight: 700;
+            letter-spacing: -.035em
+        }
+
+        .statement .accent {
+            color: #a9c8ff
+        }
+
+        .release {
+            background: linear-gradient(160deg, #131a27, #0a0b10);
+            border-radius: 28px;
+            padding: 30px 25px;
+            margin-top: 25px
+        }
+
+        .release h3 {
+            font-size: 34px;
+            margin: 4px 0
+        }
+
+        .release li {
+            padding: 6px 0;
+            color: #c3c5cf
+        }
+
+        .secret {
+            text-align: center;
+            padding: 105px 0 120px
+        }
+
+        .secret h2 {
+            font-size: clamp(38px, 8vw, 65px);
+            letter-spacing: -.05em;
+            margin: 10px 0
+        }
+
+        .primary {
+            border: 0;
+            border-radius: 100px;
+            padding: 15px 27px;
+            color: #fff;
+            background: #2775eb;
+            font-weight: 650;
+            margin-top: 25px;
+            box-shadow: 0 10px 30px #246bea40
+        }
+
+        .primary:hover {
+            background: #448dff
+        }
+
+        .gift {
+            display: none;
+            max-width: 650px;
+            margin: 30px auto 0;
+            background: linear-gradient(145deg, #252336, #12141c);
+            border: 1px solid #6e6a9140;
+            border-radius: 26px;
+            padding: 30px 24px;
+            text-align: left;
+            animation: appear .7s ease both
+        }
+
+        .gift.show {
+            display: block
+        }
+
+        .gift h3 {
+            text-align: center;
+            font-size: 32px;
+            margin: 0 0 22px
+        }
+
+        .gift p {
+            color: #e0dfe7;
+            margin: 13px 0
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 27px !important;
+            color: #fff !important;
+            font-weight: 700
+        }
+
+        .foot {
+            font-size: 12px;
+            color: #8c8e9c;
+            text-align: center;
+            padding: 25px 0 60px
+        }
+
+        .foot p {
+            margin: 4px
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            z-index: 50;
+            top: -20px;
+            width: 8px;
+            height: 13px;
+            animation: fall 2.8s linear forwards
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(15px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @media(max-width:560px) {
+            section {
+                padding: 75px 0
+            }
+
+            .spec {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .tile {
+                padding: 17px
+            }
+
+            .tile b {
+                font-size: 15px
+            }
+
+            .trait {
+                display: block
+            }
+
+            .trait span {
+                display: block;
+                text-align: left;
+                margin-top: 5px
+            }
+
+            .release {
+                padding: 24px 20px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            .gift {
+                animation: none
+            }
+
+            .confetti {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav><strong>MT-19891014</strong><a href="#specs">技術規格 ↓</a></nav>
+    <main>
+        <header class="hero">
+            <div class="eyebrow">INTRODUCING · 2026.10.14</div>
+            <h1 class="gradient">毛老師<span
+                    style="display:block;font-size:.31em;letter-spacing:-.025em;margin-top:15px">MAO Teacher</span></h1>
+            <p class="sub">高智商實用主義男性<br>少說廢話，多做事!</p>
+            <div class="pill">Version 37.0 · 生日特別版</div>
+            <div class="scroll">向下探索 ↓</div>
+        </header>
+        <div class="wrap">
+            <section id="specs">
+                <div class="section-num">01 / PRODUCT OVERVIEW</div>
+                <h2 class="heading">低調外觀<br><span class="gradient">高性能內核</span></h2>
+                <p class="lead">本產品具備優秀的邏輯分析能力、強烈的責任意識，以及高度務實的生活態度<br>外觀為普通成年男性，內部搭載高性能審計引擎</p>
+                <div class="spec">
+                    <div class="tile"><small>產品型號</small><b>MT-19891014</b></div>
+                    <div class="tile"><small>出廠日期</small><b>1989.10.14</b></div>
+                    <div class="tile"><small>產品類型</small><b>高智商實用主義男性</b></div>
+                    <div class="tile"><small>核心架構</small><b>ISTJ · 原廠深度客製版（疑似）</b></div>
+                    <div class="tile"><small>適用場景</small><b>工作／生活／戀愛／不可預測環境</b></div>
+                    <div class="tile"><small>使用難度</small><b>★★★★★</b></div>
+                    <div class="tile"><small>珍稀程度</small><b>★★★★★★★★★★</b></div>
+                    <div class="tile"><small>設計理念</small><b>少說廢話，多做事!</b></div>
+                </div>
+                <p class="muted" style="margin-top:30px">
+                    不喜歡浪費錢，但會主動替重要的人花錢<br>
+                    自認什麼都不缺，於是生日禮物選購難度極高<br>
+                    工作時持續高負載運轉，休息時拒絕額外消耗Token<br>
+                    對不必要的物品表示嫌棄，對女朋友送的東西卻會默默珍惜<br>
+                    一邊嫌棄女朋友胖，又一邊瘋狂投食<br>
+                    不一定擅長甜言蜜語，但是會記得給女朋友買大閘蟹<br>
+                </p>
+            </section>
+            <section id="features">
+                <div class="section-num">02 / CORE FEATURES</div>
+                <h2 class="heading">不是每項功能<br>都寫在表面</h2>
+                <div class="feature">
+                    <div class="n">FEATURE 01</div>
+                    <h3>自動關懷系統</h3>
+                    <p>即使使用者具備完整的生活自理能力，本產品仍可能自動啟動關懷程序</p>
+                    <p><strong>觸發條件：</strong>女朋友病了、累了、煩了、沒吃好、沒好好睡覺，或其他讓本產品不放心的情況</p>
+                    <p><strong>輸出結果：</strong>關心、提醒、購買物資、超頻哄人及其他實際行動</p>
+                </div>
+                <div class="feature">
+                    <div class="n">FEATURE 02</div>
+                    <h3>審計級邏輯處理器</h3>
+                    <p>擅長發現問題、檢查漏洞、提出不同觀點</p>
+                    <p>注意：偶爾會在普通聊天情境下自動啟動</p>
+                </div>
+                <div class="feature">
+                    <div class="n">FEATURE 03</div>
+                    <h3>隱藏式情感儲存</h3>
+                    <p class="quote">表面顯示：「買這個幹嘛？」</p>
+                    <p class="quote">背景程序：「這是她送的，收好!」</p>
+                    <p>本功能日常背景執行中</p>
+                </div>
+            </section>
+            <section id="modes">
+                <div class="section-num">03 / SYSTEM MODES</div>
+                <h2 class="heading">六種模式。<br>一套獨特系統。</h2>
+                <div class="traits">
+                    <div class="trait"><strong>省錢模式</strong><span>9.9 元咖啡即可穩定運行</span></div>
+                    <div class="trait"><strong>低耐心模式</strong><span>不建議安裝耗時拼裝類擴充套件</span></div>
+                    <div class="trait"><strong>高負載模式</strong><span>審計工作期間 Token 資源緊張</span></div>
+                    <div class="trait"><strong>禮物接收模式</strong><span>嘴上可能抱怨，實際珍惜程度未知上限</span></div>
+                    <div class="trait"><strong>情感表達模式</strong><span>語言輸出不一定華麗，行動輸出相對穩定</span></div>
+                    <div class="trait"><strong>深圳散熱模式</strong><span>居家衣物配置趨近最小化</span></div>
+                </div>
+            </section>
+            <section id="bugs">
+                <div class="section-num">04 / BUG REPORT & FAQ</div>
+                <h2 class="heading">已知特性<br>持續觀察中</h2>
+                <p class="muted">點擊問題，展開系統說明</p>
+                <div class="faq">
+                    <details>
+                        <summary>為什麼本產品總說自己什麼都不缺？</summary>
+                        <p>因為真的覺得目前配置已經夠用......</p>
+                    </details>
+                    <details>
+                        <summary>為什麼收到禮物還要唸兩句？</summary>
+                        <p>可能正在執行成本合理性審查，請勿直接判定為不喜歡(也可能單純傲嬌)</p>
+                    </details>
+                    <details>
+                        <summary>本產品是否支援浪漫功能？</summary>
+                        <p>支援，但主要透過行動介面輸出，語音介面偶爾不穩定</p>
+                    </details>
+                    <details>
+                        <summary>可以退貨嗎？</summary>
+                        <p>本產品不適用一般商品退換貨條款，重大事項請雙方友善協商</p>
+                    </details>
+                </div>
+            </section>
+            <section class="statement">
+                <div class="section-num">05 / FACTORY NOTE</div>
+                <h2 class="heading">原廠特別聲明</h2>
+                <p class="muted">本產品並不完美</p>
+                <p class="lead" style="margin:18px auto">偶爾固執、偶爾暴躁、偶爾讓人很想翻白眼還很欠揍</p>
+                <p class="lead" style="margin:18px auto">但也很聰明、很認真、很有責任感，很可愛</p>
+                <p class="big">最重要的是<br>他會在<br>明明知道一個人能照顧好自己的情況下<br><span class="accent">依然忍不住替她 煩惱東 煩惱西</span></p>
+                <p class="muted">這項功能，對使用者而言，具有不可替代的價值</p>
+            </section>
+            <section id="release">
+                <div class="section-num">06 / RELEASE NOTES</div>
+                <h2 class="heading">全新升級<br>他還是那個他</h2>
+                <div class="release">
+                    <div class="eyebrow">Birthday Update · 2026.10.14</div>
+                    <h3>Version 37.0</h3>
+                    <ul>
+                        <li>年齡版本正式升級至 37.0</li>
+                        <li>保留既有高智商/責任感/靠譜模組</li>
+                        <li>建議適度優化休息效率。</li>
+                        <li>建議增加快樂體驗，降低無效內耗</li>
+                        <li>希望未來每個版本，都比上一個版本更自在</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="secret" id="surprise">
+                <div class="section-num">ONE MORE THING…</div>
+                <h2>還有一件事......</h2>
+                <p class="muted">有一段專屬留言，只有你能打開。</p><button class="primary" id="openGift" aria-expanded="false"
+                    aria-controls="gift">解鎖生日彩蛋 ✦</button>
+                <div class="gift" id="gift" role="region" aria-label="生日祝福">
+                    <h3>生日快樂~毛老師 ♡</h3>
+                    <p>毛老師，生日快樂 ♡♡♡</p>
+                    <p>雖然你總說自己什麼都不缺，也總叫我不要亂花錢</p>
+                    <p>但生日總還是想送你一點特別的東西</p>
+                    <p>既然實體商品很難通過你的採購審核</p>
+                    <p>那就只能發揮碼農技能送你一份專屬使用說明書</p>
+                    <p>謝謝你一直以來的關心照顧與愛</p>
+                    <p>希望新的一年，你能少一點壓力，多一點開心，工作順利，身體健康!</p>
+                    <p>還有，記得好好吃飯、好好休息、少喝點咖啡、少拉點肚子。</p>
+                    <p class="signature">—— 來自那位偶爾讓你很頭痛的類AI女友</p>
+                </div>
+            </section>
+            <footer class="foot">
+                <p>文件狀態：正式發行</p>
+                <p>保固期限：依雙方實際相處情況持續更新</p>
+                <p>最終解釋權：雙方共同持有</p>
+                <p style="margin-top:20px">MAO Teacher · User Manual v1.0 · Made with care</p>
+            </footer>
+        </div>
+    </main>
+    <script>document.getElementById('openGift').addEventListener('click', function () { const gift = document.getElementById('gift'); gift.classList.add('show'); this.setAttribute('aria-expanded', 'true'); this.textContent = '已解鎖 ♡'; gift.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; for (let i = 0; i < 38; i++) { const e = document.createElement('span'); e.className = 'confetti'; e.style.left = Math.random() * 100 + 'vw'; e.style.background = ['#8db8ff', '#fff', '#d6b8fa', '#a5f3d0'][i % 4]; e.style.animationDelay = Math.random() * .65 + 's'; document.body.appendChild(e); setTimeout(() => e.remove(), 3500) } });</script>
+</body>
+
+</html>
