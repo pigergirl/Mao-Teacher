@@ -436,111 +436,279 @@
                 display: none
             }
         }
-    
-/* iPhone 13 Pro (390 CSS px) / 13 Pro Max (428 CSS px) */
-@media (max-width: 560px) {
-    html { -webkit-text-size-adjust: 100%; }
-    body { overflow-x: hidden; }
-    nav {
-        padding: 12px max(22px, env(safe-area-inset-right))
-                 12px max(22px, env(safe-area-inset-left));
-        min-height: 52px;
-    }
-    nav strong { font-size: 13px; }
-    nav a { font-size: 12px; }
 
-    .wrap { padding: 0 26px; }
-    section { padding: 83px 0; }
-    .hero {
-        min-height: 88svh;
-        padding: 88px 26px 72px;
-    }
-    .hero h1 {
-        font-size: clamp(58px, 15.5vw, 67px);
-        letter-spacing: -.065em;
-        margin: 23px 0;
-    }
-    .hero h1 span {
-        font-size: .30em !important;
-        letter-spacing: -.015em !important;
-        margin-top: 16px !important;
-    }
-    .hero .sub { font-size: 19px; line-height: 1.7; }
-    .eyebrow { font-size: 11px; letter-spacing: .15em; }
-    .pill { margin-top: 30px; }
-    .scroll { margin-top: 62px; }
+        /* iPhone 13 Pro (390 CSS px) / 13 Pro Max (428 CSS px) */
+        @media (max-width: 560px) {
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
 
-    .heading {
-        font-size: clamp(34px, 8.8vw, 39px);
-        line-height: 1.22;
-        margin: 17px 0 27px;
-        letter-spacing: -.045em;
-    }
-    .lead { font-size: 17px; line-height: 1.95; }
-    .section-num { font-size: 11px; letter-spacing: .12em; }
+            body {
+                overflow-x: hidden;
+            }
 
-    /* Long specifications are full-width, not squeezed into two columns. */
-    .spec { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 34px; }
-    .tile { min-width: 0; padding: 21px 23px; border-radius: 20px; }
-    .tile small { font-size: 12px; }
-    .tile b {
-        font-size: 17px;
-        line-height: 1.65;
-        overflow-wrap: anywhere;
-        margin-top: 7px;
-    }
-    #specs > p.muted {
-        font-size: 15px;
-        line-height: 2.05;
-        margin-top: 33px !important;
-        overflow-wrap: break-word;
-    }
+            nav {
+                padding: 12px max(22px, env(safe-area-inset-right)) 12px max(22px, env(safe-area-inset-left));
+                min-height: 52px;
+            }
 
-    .feature { padding: 35px 0; }
-    .feature h3 { font-size: 25px; line-height: 1.4; margin: 12px 0 18px; }
-    .feature p { font-size: 16px; line-height: 1.9; margin: 14px 0; }
-    .feature .quote { font-size: 19px; line-height: 1.75; }
+            nav strong {
+                font-size: 13px;
+            }
 
-    .traits { gap: 12px; margin-top: 32px; }
-    .trait { padding: 22px 23px; border-radius: 20px; }
-    .trait strong { display: block; font-size: 16px; }
-    .trait span { font-size: 15px; line-height: 1.75; margin-top: 9px; }
+            nav a {
+                font-size: 12px;
+            }
 
-    .faq { margin-top: 30px; }
-    .faq details { padding: 23px 0; }
-    .faq summary { font-size: 16px; line-height: 1.65; gap: 15px; }
-    .faq summary::after { flex: 0 0 auto; }
-    .faq p { font-size: 15px; line-height: 1.85; }
+            .wrap {
+                padding: 0 26px;
+            }
 
-    .statement { padding: 95px 0; }
-    .statement .big {
-        font-size: clamp(24px, 6.3vw, 29px);
-        line-height: 1.7;
-        letter-spacing: -.025em;
-        overflow-wrap: break-word;
-    }
-    .statement .muted { font-size: 15px; line-height: 1.9; }
+            section {
+                padding: 83px 0;
+            }
 
-    .release { padding: 28px 23px; border-radius: 22px; margin-top: 32px; }
-    .release h3 { font-size: 30px; margin: 12px 0; }
-    .release ul { padding-left: 21px; }
-    .release li { font-size: 15px; line-height: 1.85; padding: 7px 0; }
+            .hero {
+                min-height: 88svh;
+                padding: 88px 26px 72px;
+            }
 
-    .secret { padding: 98px 0 104px; }
-    .secret h2 { font-size: 38px; line-height: 1.3; }
-    .secret > .muted { font-size: 15px; line-height: 1.85; }
-    .primary { min-height: 52px; padding: 15px 28px; }
-    .gift { padding: 30px 23px; border-radius: 22px; }
-    .gift h3 { font-size: 26px; line-height: 1.5; }
-    .gift p { font-size: 16px; line-height: 1.95; margin: 18px 0; }
-    .signature { font-size: 15px !important; line-height: 1.8 !important; }
-    .foot { font-size: 11px; line-height: 1.9; }
-}
-@media (max-width: 380px) {
-    .wrap { padding: 0 22px; }
-    .hero { padding-left: 22px; padding-right: 22px; }
-}
+            .hero h1 {
+                font-size: clamp(58px, 15.5vw, 67px);
+                letter-spacing: -.065em;
+                margin: 23px 0;
+            }
 
+            .hero h1 span {
+                font-size: .30em !important;
+                letter-spacing: -.015em !important;
+                margin-top: 16px !important;
+            }
+
+            .hero .sub {
+                font-size: 19px;
+                line-height: 1.7;
+            }
+
+            .eyebrow {
+                font-size: 11px;
+                letter-spacing: .15em;
+            }
+
+            .pill {
+                margin-top: 30px;
+            }
+
+            .scroll {
+                margin-top: 62px;
+            }
+
+            .heading {
+                font-size: clamp(34px, 8.8vw, 39px);
+                line-height: 1.22;
+                margin: 17px 0 27px;
+                letter-spacing: -.045em;
+            }
+
+            .lead {
+                font-size: 17px;
+                line-height: 1.95;
+            }
+
+            .section-num {
+                font-size: 11px;
+                letter-spacing: .12em;
+            }
+
+            /* Long specifications are full-width, not squeezed into two columns. */
+            .spec {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 12px;
+                margin-top: 34px;
+            }
+
+            .tile {
+                min-width: 0;
+                padding: 21px 23px;
+                border-radius: 20px;
+            }
+
+            .tile small {
+                font-size: 12px;
+            }
+
+            .tile b {
+                font-size: 17px;
+                line-height: 1.65;
+                overflow-wrap: anywhere;
+                margin-top: 7px;
+            }
+
+            #specs>p.muted {
+                font-size: 15px;
+                line-height: 2.05;
+                margin-top: 33px !important;
+                overflow-wrap: break-word;
+            }
+
+            .feature {
+                padding: 35px 0;
+            }
+
+            .feature h3 {
+                font-size: 25px;
+                line-height: 1.4;
+                margin: 12px 0 18px;
+            }
+
+            .feature p {
+                font-size: 16px;
+                line-height: 1.9;
+                margin: 14px 0;
+            }
+
+            .feature .quote {
+                font-size: 19px;
+                line-height: 1.75;
+            }
+
+            .traits {
+                gap: 12px;
+                margin-top: 32px;
+            }
+
+            .trait {
+                padding: 22px 23px;
+                border-radius: 20px;
+            }
+
+            .trait strong {
+                display: block;
+                font-size: 16px;
+            }
+
+            .trait span {
+                font-size: 15px;
+                line-height: 1.75;
+                margin-top: 9px;
+            }
+
+            .faq {
+                margin-top: 30px;
+            }
+
+            .faq details {
+                padding: 23px 0;
+            }
+
+            .faq summary {
+                font-size: 16px;
+                line-height: 1.65;
+                gap: 15px;
+            }
+
+            .faq summary::after {
+                flex: 0 0 auto;
+            }
+
+            .faq p {
+                font-size: 15px;
+                line-height: 1.85;
+            }
+
+            .statement {
+                padding: 95px 0;
+            }
+
+            .statement .big {
+                font-size: clamp(24px, 6.3vw, 29px);
+                line-height: 1.7;
+                letter-spacing: -.025em;
+                overflow-wrap: break-word;
+            }
+
+            .statement .muted {
+                font-size: 15px;
+                line-height: 1.9;
+            }
+
+            .release {
+                padding: 28px 23px;
+                border-radius: 22px;
+                margin-top: 32px;
+            }
+
+            .release h3 {
+                font-size: 30px;
+                margin: 12px 0;
+            }
+
+            .release ul {
+                padding-left: 21px;
+            }
+
+            .release li {
+                font-size: 15px;
+                line-height: 1.85;
+                padding: 7px 0;
+            }
+
+            .secret {
+                padding: 98px 0 104px;
+            }
+
+            .secret h2 {
+                font-size: 38px;
+                line-height: 1.3;
+            }
+
+            .secret>.muted {
+                font-size: 15px;
+                line-height: 1.85;
+            }
+
+            .primary {
+                min-height: 52px;
+                padding: 15px 28px;
+            }
+
+            .gift {
+                padding: 30px 23px;
+                border-radius: 22px;
+            }
+
+            .gift h3 {
+                font-size: 26px;
+                line-height: 1.5;
+            }
+
+            .gift p {
+                font-size: 16px;
+                line-height: 1.95;
+                margin: 18px 0;
+            }
+
+            .signature {
+                font-size: 15px !important;
+                line-height: 1.8 !important;
+            }
+
+            .foot {
+                font-size: 11px;
+                line-height: 1.9;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .wrap {
+                padding: 0 22px;
+            }
+
+            .hero {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+        }
     </style>
 </head>
 
@@ -559,7 +727,7 @@
             <section id="specs">
                 <div class="section-num">01 / PRODUCT OVERVIEW</div>
                 <h2 class="heading">低調外觀<br><span class="gradient">高性能內核</span></h2>
-                <p class="lead">本產品具備優秀的邏輯分析能力、強烈的責任意識，以及高度務實的生活態度<br>外觀為普通成年男性，內部搭載高性能審計引擎</p>
+                <p class="lead">本產品具備優秀的邏輯分析能力<br>強烈的責任意識<br>以及高度務實的生活態度<br>外觀為普通成年男性<br>內部搭載高性能審計引擎</p>
                 <div class="spec">
                     <div class="tile"><small>產品型號</small><b>MT-19891014</b></div>
                     <div class="tile"><small>出廠日期</small><b>1989.10.14</b></div>
@@ -573,8 +741,10 @@
                 <p class="muted" style="margin-top:30px">
                     不喜歡浪費錢，但會主動替重要的人花錢<br>
                     自認什麼都不缺，於是生日禮物選購難度極高<br>
-                    工作時持續高負載運轉，休息時拒絕額外消耗Token<br>
-                    對不必要的物品表示嫌棄，對女朋友送的東西卻會默默珍惜<br>
+                    工作時持續高負載運轉<br>
+                    休息時拒絕額外消耗Token<br>
+                    對不必要的物品表示嫌棄<br>
+                    對女朋友送的東西卻會默默珍惜<br>
                     一邊嫌棄女朋友胖，又一邊瘋狂投食<br>
                     不一定擅長甜言蜜語，但是會記得給女朋友買大閘蟹<br>
                 </p>
@@ -585,7 +755,7 @@
                 <div class="feature">
                     <div class="n">FEATURE 01</div>
                     <h3>自動關懷系統</h3>
-                    <p>即使使用者具備完整的生活自理能力，本產品仍可能自動啟動關懷程序</p>
+                    <p>即使使用者具備完整的生活自理能力<br>本產品仍可能自動啟動關懷程序</p>
                     <p><strong>觸發條件：</strong>女朋友病了、累了、煩了、沒吃好、沒好好睡覺，或其他讓本產品不放心的情況</p>
                     <p><strong>輸出結果：</strong>關心、提醒、購買物資、超頻哄人及其他實際行動</p>
                 </div>
@@ -644,21 +814,22 @@
                 <p class="muted">本產品並不完美</p>
                 <p class="lead" style="margin:18px auto">偶爾固執、偶爾暴躁、偶爾讓人很想翻白眼還很欠揍</p>
                 <p class="lead" style="margin:18px auto">但也很聰明、很認真、很有責任感，很可愛</p>
-                <p class="big">最重要的是<br>他會在<br>明明知道一個人能照顧好自己的情況下<br><span class="accent">依然忍不住替她 煩惱東 煩惱西</span></p>
+                <p class="big">最重要的是<br>他會在明明知道<br>一個人能照顧好自己的情況下<br><span class="accent">依然忍不住替她 煩惱東 煩惱西</span></p>
                 <p class="muted">這項功能，對使用者而言，具有不可替代的價值</p>
             </section>
             <section id="release">
                 <div class="section-num">06 / RELEASE NOTES</div>
                 <h2 class="heading">全新升級<br>他還是那個他</h2>
+                <p class="muted">orademao is orademao 你大爺還是你大爺</p>
                 <div class="release">
                     <div class="eyebrow">Birthday Update · 2026.10.14</div>
                     <h3>Version 37.0</h3>
                     <ul>
                         <li>年齡版本正式升級至 37.0</li>
                         <li>保留既有高智商/責任感/靠譜模組</li>
-                        <li>建議適度優化休息效率。</li>
+                        <li>建議適度優化休息效率</li>
                         <li>建議增加快樂體驗，降低無效內耗</li>
-                        <li>希望未來每個版本，都比上一個版本更自在</li>
+                        <li>希望在每一個未來，都比上一版更自在</li>
                     </ul>
                 </div>
             </section>
@@ -670,13 +841,18 @@
                 <div class="gift" id="gift" role="region" aria-label="生日祝福">
                     <h3>生日快樂~毛老師 ♡</h3>
                     <p>毛老師，生日快樂 ♡♡♡</p>
-                    <p>雖然你總說自己什麼都不缺，也總叫我不要亂花錢</p>
+                    <p>雖然你總說自己什麼都不缺</p>
+                    <p>也總叫我不要亂花錢</p>
                     <p>但生日總還是想送你一點特別的東西</p>
                     <p>既然實體商品很難通過你的採購審核</p>
-                    <p>那就只能發揮碼農技能送你一份專屬使用說明書</p>
+                    <p>那就只能發揮碼農技能</p>
+                    <p>送你一份專屬使用說明書</p>
                     <p>謝謝你一直以來的關心照顧與愛</p>
-                    <p>希望新的一年，你能少一點壓力，多一點開心，工作順利，身體健康!</p>
-                    <p>還有，記得好好吃飯、好好休息、少喝點咖啡、少拉點肚子。</p>
+                    <p>希望新的一年</p>
+                    <p>你能少一點壓力，多一點開心!</p>
+                    <p>工作順利~身體健康!</p>
+                    <p>還有，記得好好吃飯、好好休息</p>
+                    <p>少喝點咖啡、少拉點肚子。</p>
                     <p class="signature">—— 來自那位偶爾讓你很頭痛的類AI女友</p>
                 </div>
             </section>
